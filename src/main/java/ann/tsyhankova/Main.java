@@ -8,9 +8,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String text = FileService.getTextFromFile(new File("").getAbsoluteFile() + "/src/main/resources/in.txt");
         List<String> wordList = TextUtils.getWordList(text);
-        for (String word : wordList){
-            System.out.println(word);
-        }
+        String textAligned = new TextService().getAlignedText(text, 45);
+        System.out.println(textAligned);
+//        for (String word : wordList){
+//            System.out.println(word);
+//        }
 //        List<String> resultTextList = new TextService(text, 47).getAlignText();
 //        for(String s : resultTextList){
 //            System.out.println(s);
