@@ -58,8 +58,13 @@ public class TextTest {
                 {"one", 3, "one"},
                 {"one", 10, "one       "},
                 {" one", 3, "one"},
-                {"one two", 3, "one \ntwo"},
-                {textFromTestFile, null, ""}
+                {"one two", 3, "one\ntwo"},
+                {textFromTestFile, null, ""},
+                {"\none", 3, "one"},
+                {"one \n", 3, "one"},
+                {"one \none \n one \n", 3, "one\none\none"},
+                {"\t \t \t \n \n", 10, ""},
+                {"\t \t \t \n \n one", 10, "one       "}
         };
     }
 

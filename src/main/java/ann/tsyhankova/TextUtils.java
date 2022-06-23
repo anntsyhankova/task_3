@@ -6,10 +6,16 @@ import java.util.List;
 
 public class TextUtils {
 
-    public static List<String> getWordList(String text){
+    public static List<String> getWordList(String text) {
         try {
-            return Arrays.asList(text.split("\\s+"));
-        } catch (NullPointerException e){
+            ArrayList<String> resultList = new ArrayList<>();
+            Arrays.asList(text.split("\\s+")).forEach(word -> {
+                if (!"".equals(word)) {
+                    resultList.add(word);
+                }
+            });
+            return resultList;
+        } catch (NullPointerException e) {
             return new ArrayList<String>();
         }
     }
