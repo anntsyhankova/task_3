@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileService {
 
-    public static String getTextFromFile(String path) throws IOException {
+    public static String getTextFromFile(String path) {
         String text;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             StringBuilder sb = new StringBuilder();
@@ -18,6 +18,9 @@ public class FileService {
                 line = br.readLine();
             }
             text = sb.toString();
+        }
+        catch (Exception e) {
+            return "";
         }
         return text;
     }
